@@ -1,0 +1,109 @@
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --bg:#0b1220;--ink:#e8eef7;--muted:#9fb0c9;
+    --cy:#22d3ee;--amber:#fbbf24;--green:#34d399;
+    --line:rgba(255,255,255,.10);--card:rgba(255,255,255,.045);
+  }
+  html,body{height:100%;}
+  body{
+    background:radial-gradient(1100px 650px at 82% -12%, #16243f 0%, var(--bg) 55%);
+    color:var(--ink);
+    font-family:"Segoe UI",-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+    display:flex;align-items:center;justify-content:center;overflow:hidden;
+  }
+  .slide{
+    width:100vw;height:100vh;max-width:177.78vh; /* 16:9 */
+    padding:5.5vh 5.5vw;display:flex;flex-direction:column;justify-content:center;
+  }
+  .kicker{color:var(--cy);font-size:.92rem;letter-spacing:.2em;font-weight:600;margin-bottom:10px;}
+  h1{font-size:2.6rem;font-weight:800;letter-spacing:-.5px;line-height:1.12;}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+  .meaning{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;position:relative;}
+  .meaning .no{font-size:.8rem;color:var(--muted);letter-spacing:.1em;margin-bottom:4px;}
+  .meaning h3{font-size:1.08rem;margin-bottom:6px;}
+  .meaning p{color:var(--muted);font-size:.92rem;line-height:1.5;}
+  .meaning p b{color:var(--ink);}
+  .meaning.focus{border-color:rgba(34,211,238,.5);background:rgba(34,211,238,.07);}
+  .badge{position:absolute;top:12px;right:14px;font-size:.72rem;color:var(--cy);
+    border:1px solid rgba(34,211,238,.45);border-radius:99px;padding:2px 10px;font-weight:650;}
+  .def{
+    margin-top:14px;font-size:1.08rem;line-height:1.5;color:var(--ink);
+    border-left:4px solid var(--cy);padding:8px 16px;background:rgba(34,211,238,.07);border-radius:0 12px 12px 0;
+  }
+  .def b{color:var(--cy);}
+
+  .tri{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px;}
+  .col{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px;}
+  .col .zh{font-size:1.45rem;font-weight:800;display:inline;}
+  .col .en{color:var(--muted);font-size:.78rem;letter-spacing:.08em;margin-left:8px;}
+  .col h3{font-size:.98rem;margin:6px 0;}
+  .col p{color:var(--muted);font-size:.88rem;line-height:1.5;}
+  .col p b{color:var(--ink);}
+  .c1 .zh{color:var(--cy);} .c2 .zh{color:var(--green);} .c3 .zh{color:var(--amber);}
+  .c3{border-color:rgba(251,191,36,.4);background:rgba(251,191,36,.06);}
+  .tagline{margin-top:5px;font-size:.82rem;color:var(--cy);font-weight:650;}
+  .c2 .tagline{color:var(--green);} .c3 .tagline{color:var(--amber);}
+
+  .bottom{
+    margin-top:16px;display:flex;align-items:center;gap:18px;
+    border-top:1px solid var(--line);padding-top:14px;
+  }
+  .bottom .core{flex:1;font-size:1rem;line-height:1.5;}
+  .bottom .core b{color:var(--amber);}
+  .bottom .quote{
+    flex:0 0 34%;font-size:.9rem;line-height:1.5;color:var(--muted);
+    border-left:3px solid var(--amber);padding-left:14px;
+  }
+  .bottom .quote b{color:var(--ink);}
+  h1{font-size:2.2rem;font-weight:800;letter-spacing:-.5px;line-height:1.12;}
+</style>
+
+<div class="slide">
+  <div class="kicker">概念澄清 · WHAT IS AI-NATIVE SOFTWARE ENGINEERING</div>
+  <h1>什么是 AI 原生软件工程</h1>
+
+  <div class="duo">
+    <div class="meaning">
+      <div class="no">含义一 · 造什么（对象）</div>
+      <h3>"AI 原生应用"的工程</h3>
+      <p>构建<b>以 AI 为核心能力</b>的软件——Agent 产品、RAG 系统等。AI 不是外挂功能，而是系统的<b>底层逻辑与能力中枢</b>。</p>
+    </div>
+    <div class="meaning focus">
+      <div class="badge">本次分享主线</div>
+      <div class="no">含义二 · 怎么造（方法）</div>
+      <h3>用"AI 原生的方式"做软件工程</h3>
+      <p>当 AI Agent 成为研发的<b>一等参与者</b>，软件工程这门实践本身被重新组织——区别于 AI+ 的"工具外挂"，这是<b>范式切换</b>。</p>
+    </div>
+  </div>
+
+  <div class="def">
+    聚焦含义二：围绕<b>"如何让 AI 的自主产出可信、可控、可复现"</b>而重新设计的整套工程方法论 —— 具体体现为三重重构：
+  </div>
+
+  <div class="tri">
+    <div class="col c1">
+      <div class="zh">事</div><div class="en">DELIVERY UNIT</div>
+      <h3>交付的单元在变大</h3>
+      <p>一行补全 → 一个任务闭环 → 整个研发流程协同。生产的基本单元从<b>代码</b>上移到<b>任务与意图</b>。</p>
+      <div class="tagline">写代码退化为"最后一公里"</div>
+    </div>
+    <div class="col c2">
+      <div class="zh">人</div><div class="en">HUMAN ROLE</div>
+      <h3>角色在后撤</h3>
+      <p><b>操作者</b> → <b>监督者</b> → <b>决策者</b>。人不是被替代，而是施力点上移：稀缺能力变为把模糊需求转化为意图、约束与验收标准。</p>
+      <div class="tagline">从"做事"到"定义事、验收事"</div>
+    </div>
+    <div class="col c3">
+      <div class="zh">规则</div><div class="en">DISCIPLINE</div>
+      <h3>纪律在重建（最大缺口）</h3>
+      <p><b>规范</b>成真理之源（Spec-Driven）· 产出<b>可验证</b>（评测门禁）· 过程<b>可观测</b>（AgentOps）· 知识<b>可沉淀</b>（上下文工程）。</p>
+      <div class="tagline">规则是让前两者不失控的保障</div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="core">核心矛盾：障碍不在模型<b>够不够聪明</b>，而在是否足够<b>确定、稳定、可工程化</b>——越自主，工程纪律越重要。</div>
+    <div class="quote">未来不属于被 AI 替代的开发者，而属于<b>能指挥 AI、并为结果负责</b>的开发者。</div>
+  </div>
+</div>
